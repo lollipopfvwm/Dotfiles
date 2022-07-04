@@ -39,8 +39,6 @@ hc attr theme.active.inner_color "$ActiveInnerColor"
 hc attr theme.normal.outer_color "$BaseColor"
 hc attr theme.background_color "$BaseColor"
 
-
-
 hc keybind $Mod-Shift-e quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-q close

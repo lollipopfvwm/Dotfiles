@@ -7,6 +7,13 @@
 # ┃┏━┓┃┗┛┃┗┫┗┛┃┗━┛┃┃┗┫┏┓┃┃┃┗┓
 # ┗┛╋┗┻━━┻━┻━━┻━━━┛┗━┻┛┗┻┛┗━┛
 
+function run {
+  if ! pgrep $1 ;
+  then
+    $@&
+  fi
+}
+
 ### Start 2 monitors ###
 xrandr --output HDMI1 --mode 1366x768 --pos 1600x0 --rotate normal --output VGA1 --primary --mode 1600x900 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
@@ -42,9 +49,8 @@ nitrogen --restore &
 ### Use dunst ###
 dunst &
 
-if pgrep -c polybar; then
-    pkill polybar
-    polybar -c .config/herbstluftwm/polybar/config.ini main &
-else
-    polybar -c .config/herbstluftwm/polybar/config.ini main &
-fi
+run nm-applet &
+run volumeicon &
+run flameshot &
+
+sh ~/.config/herbstluftwm/polybar/launch.sh &

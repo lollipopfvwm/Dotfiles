@@ -12,11 +12,11 @@ Browser="google-chrome-stable"
 Filer="nemo"
 Chat="telegram-desktop"
 Music="spotify"
-Editor="subl"
+Editor="code"
 
 #================ Colors ==================
 DefaultColor="#000000"
-BaseColor="#0f1015"
+BaseColor="#212128"
 UrgentColor="#dc8191"
 InnerColor="#9a99ff"
 ActiveInnerColor="#ff67ba"
@@ -44,7 +44,6 @@ hc set always_show_frame 1
 hc set frame_bg_transparent on
 hc set frame_transparent_width 0
 hc set frame_gap "$FrameGap"
-
 
 hc attr theme.inner_width "$InnerBorder"
 hc attr theme.border_width "$Border"
