@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# add your autostart stuffs here
+
+### Start 2 monitors ###
+xrandr --output HDMI1 --mode 1366x768 --pos 1600x0 --rotate normal --output VGA1 --primary --mode 1600x900 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+
+# Add Background
+nitrogen --restore
+
+# Set Layout to Latam
+setxkbmap -model abnt2 -layout br -variant abnt2
+
+# Notify
+dunst &
+
+# Clipboard
+xclip &
+
+### Do not turn off the screen ###
+xset s off &
+xset -dpms &
+
+# Volume Control
+volumeicon &
+
+# Network manager
+nm-applet &
+
+# Screenshot
+flameshot &
+
+# Run compositor
+picom &
+
+# run bar script and dwm ( do not remove this )
+~/.dwm/bar/./bar.sh &
+dwm &
+
